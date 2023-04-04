@@ -1,0 +1,9 @@
+<app-nav-bar></app-nav-bar>
+<div class="file-upload-container">
+  <form (ngSubmit)="uploadDoc()">
+    <input type="file" (change)="onFileSelected($event)" />
+    <button type="submit" >Carica</button>
+  </form>
+</div>
+<app-footer></app-footer>
+
