@@ -1,1 +1,12 @@
+#btn-upload{
+  background-color: #c47434;
+  transition: 0.04ms;
+  color: black;
+
+}
+
+ #btn-upload:hover {
+  background-color: #c46c34;
+
+}
 
