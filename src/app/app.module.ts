@@ -17,6 +17,7 @@ import {
 import { DocumentsComponent } from './components/documents/documents.component';
 import { UploadDocComponent } from './pages/upload-doc/upload-doc.component';
 
+import {NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -25,9 +26,11 @@ import { UploadDocComponent } from './pages/upload-doc/upload-doc.component';
     NavBarComponent,
     FooterComponent,
     DocumentsComponent,
-    UploadDocComponent
+    UploadDocComponent,
+    NgbCollapseModule
   ],
   imports: [
+
     FormsModule,
     HttpClientModule,
     BrowserModule,
