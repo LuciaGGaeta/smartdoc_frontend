@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {FileService} from "../../services/file.service";
 
 @Component({
   selector: 'app-upload-doc',
@@ -9,26 +10,13 @@ import {HttpClient} from "@angular/common/http";
 export class UploadDocComponent {
   selectedFile : File = new File([],"");
 
-  constructor(private http: HttpClient) {}
+  constructor(private fileService: FileService) { }
 
   onFileSelected(event : any){
     this.selectedFile = <File> event.target.files[0];
   }
   uploadDoc(){
-    if (this.selectedFile.size === 0) {
-      alert('Seleziona un file prima di caricarlo');
-      return;
-    }
-
-    const formData = new FormData();
-
-    formData.append('file',this.selectedFile, this.selectedFile.name);
-    this.http.post('http://localhost:8080/api/upload', formData).subscribe(res=>{console.log(res);
-      alert('File caricato con successo!');}, error => {
-        console.log(error);
-        alert("Si è verificato un errore!");
-      }
-      );
+    this.fileService.uploadDoc(this.selectedFile);
   }
 
 }
