@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Folder} from "../model/folder";
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, throwError} from "rxjs";
 
 @Injectable({
@@ -50,5 +50,19 @@ export class FileService {
       }
     );
   }
+
+  getFile(fileName:string) {
+
+    this.http.post<void>('http://localhost:8080/api/downloadFile', fileName).subscribe({
+      next: data => {
+        console.log(data);
+      },
+      error: error => {
+        console.error('There was an error!', error);
+      }
+    })
+  }
+
+
 
 }

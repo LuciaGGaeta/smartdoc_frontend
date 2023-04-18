@@ -22,15 +22,9 @@ export class DocsPageComponent implements OnInit{
         map((folders: Folder[]) => {
           this.folders = of(folders);
         })
-      )
-      .subscribe();
+      ).subscribe();
   }
 
-  onCardClick(folderName: string) {
-    console.log(folderName);
-    this.folder=this.fileService.getFolderByName(folderName);
-    console.log(this.folder);
-  }
 
 
 }

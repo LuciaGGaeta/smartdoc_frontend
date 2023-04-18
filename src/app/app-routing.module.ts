@@ -20,6 +20,10 @@ const routes: Routes = [
         component:FilesPageComponent
       },
       {
+        path:'docsPage/filesPage/:name/filePage/:fileName',
+        component:FilePageComponent
+      },
+      {
         path: 'upload',
         component:UploadDocComponent
       }
