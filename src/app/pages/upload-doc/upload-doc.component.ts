@@ -8,6 +8,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class UploadDocComponent {
   selectedFile : File = new File([],"");
+
   constructor(private http: HttpClient) {}
 
   onFileSelected(event : any){

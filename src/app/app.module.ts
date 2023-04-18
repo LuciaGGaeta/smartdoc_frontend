@@ -18,6 +18,11 @@ import {DocumentsComponent} from './components/documents/documents.component';
 import {UploadDocComponent} from './pages/upload-doc/upload-doc.component';
 import {MdbCollapseModule} from "mdb-angular-ui-kit/collapse";
 
+import { DocsPageComponent } from './pages/docs-page/docs-page.component';
+import { DocComponent } from './components/doc/doc.component';
+import { FilePageComponent } from './pages/file-page/file-page.component';
+import { FilesPageComponent } from './pages/files-page/files-page.component';
+
 
 
 @NgModule({
@@ -27,7 +32,11 @@ import {MdbCollapseModule} from "mdb-angular-ui-kit/collapse";
     NavBarComponent,
     FooterComponent,
     DocumentsComponent,
-    UploadDocComponent
+    UploadDocComponent,
+    DocsPageComponent,
+    DocComponent,
+    FilePageComponent,
+    FilesPageComponent
   ],
   imports: [
     FormsModule,
