@@ -2,7 +2,7 @@
 <div class="container" style="padding-top: 60px; padding-bottom: 100px;">
   <div id="cards" class="row row-cols-1 row-cols-md-3 g-4" style="max-height: calc(100vh - 120px); overflow-y: auto;">
     <!-- Contenuto scrollabile -->
-    <div class="card" *ngFor="let folder of folders|async"  [routerLink]="['filesPage', folder.name]">
+    <div class="card" *ngFor="let folder of folders"  [routerLink]="['filesPage', folder.name]">
       <img src="./assets/folder.png" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 id="nomeFile" class="card-title">{{folder.name }}</h5>

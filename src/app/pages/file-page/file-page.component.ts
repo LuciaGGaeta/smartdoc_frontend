@@ -17,7 +17,14 @@ export class FilePageComponent implements OnInit{
     this.name = this.route.snapshot.params['fileName'];
     console.log(this.name);
     if (this.name != null) {
-         this.fileService.getFile(this.name);
+         this.fileService.getFile(this.name).subscribe({
+           next: data => {
+             console.log(data);
+           },
+           error: error => {
+             console.error('There was an error!', error);
+           }
+         });
       }else{
         console.log("Non entro");
       }

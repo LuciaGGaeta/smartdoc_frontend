@@ -16,7 +16,22 @@ export class UploadDocComponent {
     this.selectedFile = <File> event.target.files[0];
   }
   uploadDoc(){
-    this.fileService.uploadDoc(this.selectedFile);
+    if (this.selectedFile.size === 0) {
+      alert('Seleziona un file prima di caricarlo');
+      return;
+    }
+    const formData = new FormData();
+    formData.append('file', this.selectedFile, this.selectedFile.name);
+    this.fileService.uploadDoc(formData).subscribe({
+      next: data => {
+        alert("File caricato correttamente");
+      },
+      error: error => {
+        console.error('There was an error!', error);
+      }
+    });
   }
+
+
 
 }

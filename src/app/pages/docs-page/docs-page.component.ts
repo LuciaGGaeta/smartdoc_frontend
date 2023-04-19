@@ -13,16 +13,13 @@ import {map} from "rxjs/operators";
 })
 export class DocsPageComponent implements OnInit{
   constructor(private fileService: FileService) { }
-  folders: Observable<Folder[]> = of([]);
+  folders?: Folder[];
   folder?:Observable<Folder>;
 
   ngOnInit(): void {
-    this.fileService.getFolders()
-      .pipe(
-        map((folders: Folder[]) => {
-          this.folders = of(folders);
-        })
-      ).subscribe();
+    this.fileService.getFolders().subscribe(res=>{
+      this.folders = res as Folder[];
+    })
   }
 
 

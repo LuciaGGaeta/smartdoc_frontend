@@ -14,24 +14,18 @@ import {Observable} from "rxjs";
 export class FilesPageComponent implements OnInit {
   name?: string;
   files?: string[];
-  folder?: Observable<Folder>;
+  folder?: Folder;
   constructor(private route: ActivatedRoute, private fileService: FileService) { }
 
   ngOnInit() {
     // Recupera il valore del parametro :name dalla URL
     this.name = this.route.snapshot.params['name'];
 
-    // Utilizza il valore del parametro :name come desiderato
-    console.log('Valore del parametro :name:', this.name);
     if (this.name != null) {
-      this.folder = this.fileService.getFolderByName(this.name);
-      this.folder.pipe(
-        map(folder => {
-          // Accedi ai campi di Folder
-          this.files =   folder.files;
-        })
-      ).subscribe();
-
+      this.fileService.getFolderByName(this.name).subscribe(res=>{
+        this.folder = res as Folder;
+        this.files = this.folder.files;
+      });
     }else{
       console.log("Non entro");
     }
