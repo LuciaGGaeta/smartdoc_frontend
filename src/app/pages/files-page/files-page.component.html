@@ -1,6 +1,6 @@
 <h1>{{this.name}}</h1>
 <div class="list-group">
   <div class="card" *ngFor="let file of files" >
-    <button type="button" class="list-group-item list-group-item-action"  [routerLink]="['filePage', file]"><img src="./assets/PDF_file_icon.svg.png" style="hight:30px; width:30px;" > {{file}}</button>
+    <button type="button" class="list-group-item list-group-item-action"  (click)="btn_download(file)" ><img src="./assets/PDF_file_icon.svg.png" style="hight:30px; width:30px;" > {{file}}</button>
   </div>
 </div>

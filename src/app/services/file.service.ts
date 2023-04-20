@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import {Folder} from "../model/folder";
-import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import {catchError, Observable, throwError} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class FileService {
   constructor(private http: HttpClient) {}
   getFolders(): Observable<Folder[]>{
@@ -20,10 +21,9 @@ export class FileService {
     return this.http.post<void>('http://localhost:8080/api/upload', formData);
   }
 
-  getFile(fileName:string) {
-    return this.http.post<void>('http://localhost:8080/api/downloadFile', fileName);
+  getFile(fileName:string):Observable<Blob> {
+    return this.http.get('http://localhost:8080/api/downloadBlob', { params: { fileName }, responseType: 'blob' })
   }
-
 
 
 }

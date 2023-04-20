@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import {Folder} from "../../model/folder";
 import {FileService} from "../../services/file.service";
 import {Observable} from "rxjs";
+import {saveAs} from "file-saver";
 
 @Component({
   selector: 'app-files-page',
@@ -29,6 +30,16 @@ export class FilesPageComponent implements OnInit {
     }else{
       console.log("Non entro");
     }
+
+  }
+
+  public btn_download(filename:string){
+
+    this.fileService.getFile(filename)
+      .subscribe((blob: Blob) => {
+      // Utilizza saveAs per scaricare il file nel browser dell'utente
+      saveAs(blob, filename);
+    });
 
   }
 
