@@ -14,13 +14,12 @@ import {
   IgxNavbarModule,
   IgxButtonModule
 } from "igniteui-angular";
-import {DocumentsComponent} from './components/documents/documents.component';
 import {UploadDocComponent} from './pages/upload-doc/upload-doc.component';
 import {MdbCollapseModule} from "mdb-angular-ui-kit/collapse";
 import { FileSaverModule } from 'ngx-filesaver';
 import { DocsPageComponent } from './pages/docs-page/docs-page.component';
-import { DocComponent } from './components/doc/doc.component';
-import { FilePageComponent } from './pages/file-page/file-page.component';
+
+
 import { FilesPageComponent } from './pages/files-page/files-page.component';
 
 
@@ -31,11 +30,8 @@ import { FilesPageComponent } from './pages/files-page/files-page.component';
     HomepageComponent,
     NavBarComponent,
     FooterComponent,
-    DocumentsComponent,
     UploadDocComponent,
     DocsPageComponent,
-    DocComponent,
-    FilePageComponent,
     FilesPageComponent
   ],
   imports: [

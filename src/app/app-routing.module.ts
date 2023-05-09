@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import {UploadDocComponent} from "./pages/upload-doc/upload-doc.component";
 import {DocsPageComponent} from "./pages/docs-page/docs-page.component";
-import {FilePageComponent} from "./pages/file-page/file-page.component";
 import {FilesPageComponent} from "./pages/files-page/files-page.component";
 
 import {HomepageComponent} from "./pages/homepage/homepage.component";
@@ -18,10 +17,6 @@ const routes: Routes = [
       {
         path: 'docsPage/filesPage/:name',
         component:FilesPageComponent
-      },
-      {
-        path:'docsPage/filesPage/:name/filePage/:fileName',
-        component:FilePageComponent
       },
       {
         path: 'upload',
