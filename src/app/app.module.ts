@@ -9,6 +9,7 @@ import {NavBarComponent} from './components/nav-bar/nav-bar.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+
 import {
   IgxIconModule,
   IgxNavbarModule,
@@ -20,7 +21,10 @@ import { FileSaverModule } from 'ngx-filesaver';
 import { DocsPageComponent } from './pages/docs-page/docs-page.component';
 
 
+
 import { FilesPageComponent } from './pages/files-page/files-page.component';
+import { HomePageLayoutComponent } from './components/home-page-layout/home-page-layout.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -32,7 +36,8 @@ import { FilesPageComponent } from './pages/files-page/files-page.component';
     FooterComponent,
     UploadDocComponent,
     DocsPageComponent,
-    FilesPageComponent
+    FilesPageComponent,
+    HomePageLayoutComponent
   ],
   imports: [
     FormsModule,
@@ -44,7 +49,8 @@ import { FilesPageComponent } from './pages/files-page/files-page.component';
     IgxIconModule,
     IgxNavbarModule,
     IgxButtonModule,
-    MdbCollapseModule
+    MdbCollapseModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

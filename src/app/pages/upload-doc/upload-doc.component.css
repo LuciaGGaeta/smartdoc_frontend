@@ -1,12 +1,29 @@
 #btn-upload{
-  background-color: #c47434;
+  background-color: #6C63FF;
   transition: 0.04ms;
   color: black;
 
 }
-
- #btn-upload:hover {
-  background-color: #c46c34;
+#custom-border {
 
 }
+ #btn-upload:hover {
+  background-color: lightblue;
+
+}
+
+ #uploadForm{
+
+  min-height: 100vh;
+}
+
+ #form {
+
+
+  background-image:  url('/assets/images/doc_image.png') ;
+   background-position: center center;
+   background-size: 100vh;
+   background-repeat: no-repeat;
+   min-height: 60vh;
+ }
 

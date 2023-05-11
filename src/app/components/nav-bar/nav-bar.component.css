@@ -1,6 +1,29 @@
 
-#navbar{
-  background: #c47434 ;
+.navbar{
+  background: white ;
+
+}
+
+.navbar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #616b7a;
+}
+
+/*nav-link*/
+.nav-link:hover{
+  color: #6C63FF;
+}
+.nav-link.active {
+  color: #6C63FF; /* Colore del testo quando il link è attivo */
+}
+.nav-link{
+  color: #616b7a;
+
 }
 
 

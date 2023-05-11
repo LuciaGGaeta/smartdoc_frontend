@@ -1,19 +1,18 @@
-
+<h1 style="color: #6C63FF; margin-top: 10px;">Upload Doc</h1>
 <main>
   <div class="container my-5">
     <div class="row">
       <div class="col-lg-4">
         <!-- Contenuto del col-lg-4 -->
       </div>
-      <div class="col-lg-4">
-        <form (ngSubmit)="uploadDoc()" class="p-4 border">
-          <label for="formFile" class="form-label" id="label-upload"><h3>Upload Doc:</h3></label>
-          <input  class="form-control" type="file" id="formFile" (change)="onFileSelected($event)" />
-          <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-secondary btn-lg btn-block my-4" id="btn-upload">Upload</button>
-          </div>
+      <div id="uploadForm" class="col-lg-4">
+        <form (ngSubmit)="uploadDoc()" class="p-4 d-flex flex-column align-items-center" id="form">
+          <input class="form-control" style="margin-top:100px"type="file" id="formFile" (change)="onFileSelected($event)" />
+          <br>
+          <button type="submit" class="btn btn-secondary btn-lg btn-block my-4" id="btn-upload">Upload</button>
         </form>
       </div>
+
       <div class="col-lg-4">
         <!-- Contenuto del col-lg-4 -->
       </div>

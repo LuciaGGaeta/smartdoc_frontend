@@ -1,0 +1,15 @@
+service : frontend
+runtime: nodejs16
+
+instance_class: F2
+
+env_variables:
+  BUCKET_NAME: "frontendsmartdoc_bucket"
+
+handlers:
+  - url: /
+    static_files: dist/smartdocf/index.html
+    upload: dist/smartdocf/index.html
+
+  - url: /
+    static_dir: dist/smartdocf
